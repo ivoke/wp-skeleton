@@ -1,0 +1,18 @@
+# BEGIN WordPress
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule . - [L]
+RewriteRule  ^([_0-9a-zA-Z-]+/)?(wp-.*) /wp/$2 [L]
+RewriteRule  ^([_0-9a-zA-Z-]+/)?(.*\.php)$ /wp/$2 [L]
+RewriteRule ^assets/css/(.*) /content/themes/roots/assets/css/$1 [QSA,L]
+RewriteRule ^assets/js/(.*) /content/themes/roots/assets/js/$1 [QSA,L]
+RewriteRule ^assets/img/(.*) /content/themes/roots/assets/img/$1 [QSA,L]
+RewriteRule ^plugins/(.*) /content/plugins/$1 [QSA,L]
+</IfModule>
+
+Options -indexes
+# END WordPress

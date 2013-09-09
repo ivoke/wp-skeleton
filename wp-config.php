@@ -34,6 +34,12 @@ if ( file_exists( dirname( __FILE__ ) . '/env_local.php' ) ) {
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
 define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
 
+// =================================================================
+// Custom Upload Directory
+// Define absolute unless you want it to live in ./wp
+// =================================================================
+define( 'UPLOADS', '../media' );
+
 // ================================================
 // You almost certainly do not want to change these
 // ================================================
@@ -48,7 +54,6 @@ if ( file_exists( dirname( __FILE__ ) . '/memcached.php' ) )
 
 define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
 define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);
-define('WP_CONTENT_URL', '/wp-content');
 define('DOMAIN_CURRENT_SITE', $_SERVER['HTTP_HOST']);
 
 // ===========================================================================================
