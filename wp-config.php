@@ -10,14 +10,14 @@ if ( file_exists( dirname( __FILE__ ) . '/env_local.php' ) ) {
     define('WP_DEBUG', true);
     include( dirname( __FILE__ ) . '/env_local.php' );
 
-} elseif ( file_exists( dirname( __FILE__ ) . '/env_staging' ) ) {
+} elseif ( file_exists( dirname( __FILE__ ) . '/env_staging.php' ) ) {
 
     // Staging Environment
     define('WP_ENV', 'staging');
     define('WP_DEBUG', true);
     include( dirname( __FILE__ ) . '/env_staging.php' );
 
-} elseif ( file_exists( dirname( __FILE__ ) . '/env_production' ) ) {
+} elseif ( file_exists( dirname( __FILE__ ) . '/env_production.php' ) ) {
 
     // Production Environment
     define('WP_ENV', 'production');
