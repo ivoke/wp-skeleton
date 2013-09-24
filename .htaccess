@@ -12,6 +12,7 @@ RewriteRule ^assets/css/(.*) /content/themes/roots/assets/css/$1 [QSA,L]
 RewriteRule ^assets/js/(.*) /content/themes/roots/assets/js/$1 [QSA,L]
 RewriteRule ^assets/img/(.*) /content/themes/roots/assets/img/$1 [QSA,L]
 RewriteRule ^plugins/(.*) /content/plugins/$1 [QSA,L]
+RewriteRule ^media/(.*) /content/media/$1 [QSA,L]
 RewriteRule . /index.php [L]
 </IfModule>
 
