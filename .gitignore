@@ -1,4 +1,4 @@
-/media/*
+/content/media/*
 /env_*.php
 /sql-dump-*.sql
 /db-sync

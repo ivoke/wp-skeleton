@@ -4,3 +4,6 @@
 [submodule "content/themes/roots"]
 	path = content/themes/roots
 	url = git@github.com:roots/roots.git
+[submodule "cap"]
+	path = cap
+	url = git@github.com:ivoke/wp-stack.git

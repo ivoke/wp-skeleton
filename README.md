@@ -1,6 +1,6 @@
 # WordPress Skeleton
 
-Based on [markjaquith's WordPress-Skeleton](https://github.com/markjaquith/WordPress-Skeleton)
+For your own wp-skeleton please head over to [markjaquith's great WordPress-Skeleton](https://github.com/markjaquith/WordPress-Skeleton). This is just a forkless Customization.
 
 ## Plugins
 
@@ -14,7 +14,7 @@ Based on [markjaquith's WordPress-Skeleton](https://github.com/markjaquith/WordP
 * Roots as Git submodule in `/content/roots`
 * Custom content directory in `/content/` (cleaner, and also because it can't be in `/wp/`)
 * `wp-config.php` in the root (because it can't be in `/wp/`)
-* `media` folder lives in `/`
+* `media` folder lives in `/content/media`
 
 
 ## Additions
