@@ -38,7 +38,7 @@ define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
 // Custom Upload Directory
 // Define relative to the wp folder
 // =================================================================
-define( 'UPLOADS', 'media' );
+define( 'UPLOADS', '../content/media' );
 
 // ================================================
 // You almost certainly do not want to change these
