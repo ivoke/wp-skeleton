@@ -32,7 +32,7 @@ if ( file_exists( dirname( __FILE__ ) . '/env_local.php' ) ) {
 // Custom Content Directory
 // ========================
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+define( 'WP_CONTENT_URL', '/content' );
 
 // =================================================================
 // Custom Upload Directory
