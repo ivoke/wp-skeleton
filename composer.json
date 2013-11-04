@@ -31,7 +31,6 @@
     "webroot-dir": "wp",
     "webroot-package": "wordpress/wordpress",
     "installer-paths": {
-      "content/mu-plugins/{$name}/": ["wpackagist/root-relative-urls"],
       "content/plugins/{$name}/": ["type:wordpress-plugin"]
     }
   }
