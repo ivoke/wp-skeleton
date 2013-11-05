@@ -25,7 +25,6 @@
     "wordpress/wordpress": "3.7",
     "fancyguy/webroot-installer": "1.0.0",
     "wpackagist/firephp-firebug-php": "1.0.0",
-    "wpackagist/root-relative-urls": "*"
   },
   "extra": {
     "webroot-dir": "wp",
