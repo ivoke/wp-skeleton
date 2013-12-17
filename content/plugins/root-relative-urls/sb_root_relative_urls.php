@@ -67,6 +67,10 @@ class MP_WP_Root_Relative_URLS {
 
         if (!isset($url['path'])) $url['path'] = '';
 
+        if ( substr($url['path'], 0, 3) == '/..' )
+            $url['path'] = substr($url['path'], 3);
+
+
         $relative = ltrim(@$url['path'], '/') . (isset($url['query']) ? "?" . $url['query'] : '');
 
         return MP_WP_Root_Relative_URLS::scheme(
@@ -123,6 +127,9 @@ class MP_WP_Root_Relative_URLS {
             return MP_WP_Root_Relative_URLS::dynamic_absolute_url($url);
         } else {
             $url = @parse_url($url);
+
+            if ( substr($url['path'], 0, 3) == '/..' )
+                $url['path'] = substr($url['path'], 3);
 
             if (!isset($url['path'])) $url['path'] = '';
 
