@@ -75,34 +75,31 @@ For your own wp-skeleton please head over to [markjaquith's great WordPress-Skel
 
 * configure production env
   * copy `/cap/config/config.rb.sample` -> `/cap/config/config.rb`
-    * add in `:wpdb :production`
+    * add in `:wp :production :db`
       * `:host => mittwald_database_hostname` (left hand menu: Datenbanken)
       * `:user => mittwald_export_user_name` (left hand menu: Datenbanken -> Datenbankbenutzer -> export user)
       * `:password => mittwald_export_user_password` (If you didnt wait the 15 Minutes, proceed to first paragraph)
       * `:name => mittwald_database_name`
-    * add in `:wpdb :staging` (which is used as development)
+    * add in `:wp :production :wp`
+      * `:host => server_url` (left hand menu: Main Menu, Account Url)
+      * `:table_prefix => table_prefix` (the prefix you are using for the production tables)
+    * if using a staging server rinse and repeat the steps for `:wp :production` for `:wp :staging`
+    * add in `:wp :local` (which is used as development)
       * `:host => local_db_host (localhost)`
       * `:user => local_db_user`
       * `:password => local_db_password`
       * `:name => local_db_name`
+    * add in `:wp :production :wp`
+      * `:host => server_url` (the URL of the you are using locally)
+      * `:table_prefix => table_prefix` (the prefix you are using for the development tables)
   * copy `/cap/config/production.rb.sample` -> `/cap/config/production.rb`
     * add `role :web "mittwald_account_name@mittwald_account_url"`
       * account name: click on newly created account (left hand side) -> Account (**pXXXXXX**)
       * account URL: same page as before -> **pXXXXXX.mittwaldserver.info**
   * cd into `my_project_name/cap` and run `cap deploy:setup`
   * run `ssh mittwald_account_name@mittwald_account_url`
-    * cd into `/html`
-    * remove index.html `rm index.html`
     * cd into `/html/shared/config`
-    * open env_production.php `vim env_production.php`
-      * press `i` for insert mode
-      * copy/paste `env_local.php` content
-      * change DB_NAME to mittwald_database_name
-      * change DB_USER to mittwald_account_name
-      * change DB_PASSWORD to mittwald_account_password
-      * change DB_HOST to mittwald_database_host_name
-      * press `ESC`, `:wq`, `ENTER`
-      * exit ssh session by typing `exit`
+    * edit htaccess, robots.txt and wp-config using `vim`
   * cd into `my_project_name/cap` and run `cap deploy`
 
 
