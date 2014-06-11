@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
-# WIERD precise64 bug (https://github.com/mitchellh/vagrant/issues/289)
-echo "set grub-pc/install_devices /dev/sda" | debconf-communicate
-
 # Update Package List
 
-apt-get update
+apt-get update -qq
 
-apt-get upgrade -y
+apt-get upgrade -y -qq
 
 # Provision the VM
 
@@ -21,7 +18,7 @@ apt-get update
 
 # Install Some Basic Packages
 
-apt-get install -y build-essential curl git libmcrypt4 libpcre3-dev
+apt-get install -y build-essential vim curl git libmcrypt4 libpcre3-dev
 
 # Install Apache
 apt-get install -y apache2
@@ -78,6 +75,12 @@ git submodule update
 # Remove Git
 
 find . -type d | grep -i "\.git$" | xargs rm -rf
+
+# Initialize Git Again
+
+git init
+git add -A
+git commit -am 'Intial Commit'
 
 # Run Composer
 
