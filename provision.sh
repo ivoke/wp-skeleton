@@ -2,17 +2,17 @@
 
 # Update Package List
 
-echo "Silent Update to avoid precise64 bug"
+apt-get update
 
-apt-get update -qq
-
-apt-get upgrade -y -qq
+apt-get upgrade -y
 
 # Provision the VM
 
 # Install PPAs
 
-apt-add-repository ppa:ondrej/php5 -y
+sudo apt-get install python-software-properties -y
+sudo apt-add-repository ppa:ondrej/php5
+sudo add-apt-repository ppa:git-core/ppa
 
 # Update Package Lists
 
@@ -20,7 +20,7 @@ apt-get update
 
 # Install Some Basic Packages
 
-apt-get install -y build-essential vim curl git libmcrypt4 libpcre3-dev
+apt-get install -y vim curl git libmcrypt4 libpcre3-dev
 
 # Install Apache
 apt-get install -y apache2
@@ -28,7 +28,8 @@ apt-get install -y libapache2-mod-php5
 
 # Install PHP Stuffs
 
-apt-get install -y php5-cli php5-dev php5-fpm php5-cgi php5-mysql php5-xmlrpc php5-curl php5-gd php-apc php-pear php5-imap php5-mcrypt php5-pspell
+apt-get install -y php5 php5-cli php5-dev php5-fpm php5-cgi
+apt-get install -y php5-mysql php5-xmlrpc php5-curl php5-gd php-apc php-pear php5-imap php5-mcrypt php5-pspell
 
 # Make MCrypt Available
 
@@ -77,6 +78,8 @@ git submodule update
 # Remove Git
 
 find . -type d | grep -i "\.git$" | xargs rm -rf
+
+cd /skeleton
 
 # Initialize Git Again
 
