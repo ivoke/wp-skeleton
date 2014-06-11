@@ -2,6 +2,8 @@
 
 # Update Package List
 
+echo "Silent Update to avoid precise64 bug"
+
 apt-get update -qq
 
 apt-get upgrade -y -qq
