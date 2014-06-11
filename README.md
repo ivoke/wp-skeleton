@@ -54,10 +54,11 @@ For your own wp-skeleton please head over to [markjaquith's great WordPress-Skel
   * Run `cd wp-skeleton`
   * Run `rake wp:install` (Also requires composer)
   * Run `vagrant up`
-  * Database Credentials (env_local.php)
+  * Database Credentials (update env_local.php)
     * Name: `skeleton`
     * User: `skeleton`
     * Password: `secret`
+  * Open `http://192.168.33.10/` in your browser.
 
 * configure development env
   * setup a local database my_project_name
