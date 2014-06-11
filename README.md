@@ -49,6 +49,15 @@ For your own wp-skeleton please head over to [markjaquith's great WordPress-Skel
     * install it with `php composer.phar install`
   * run `rake wp:install`
 
+* Configure Vagrant Box
+  * Run `git clone git@github.com:ivoke/wp-skeleton.git`
+  * Run `cd wp-skeleton`
+  * Run `rake wp:install` (Also requires composer)
+  * Run `vagrant up`
+  * Database Credentials (env_local.php)
+    * Name: `skeleton`
+    * User: `skeleton`
+    * Password: `secret`
 
 * configure development env
   * setup a local database my_project_name
