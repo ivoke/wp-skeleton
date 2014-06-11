@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# WIERD precise64 bug (https://github.com/mitchellh/vagrant/issues/289)
+echo "set grub-pc/install_devices /dev/sda" | debconf-communicate
+
 # Update Package List
 
 apt-get update
@@ -67,3 +70,17 @@ ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite
 
 service apache2 restart
 
+# Fetch Git Submodules
+
+git submodule init
+git submodule update
+
+# Remove Git
+
+find . -type d | grep -i "\.git$" | xargs rm -rf
+
+# Run Composer
+
+curl -sS https://getcomposer.org/installer | php
+
+php composer.phar install
