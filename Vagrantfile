@@ -22,5 +22,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Run the provision script.
   config.vm.provision "shell", path: "provision.sh"
+  
+  # SSH forward agent
+  config.ssh.forward_agent = true
 
 end
