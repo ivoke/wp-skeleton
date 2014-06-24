@@ -70,6 +70,9 @@ ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite
 
 service apache2 restart
 
+# Install PhpMyAdmin
+sudo apt-get install phpmyadmin
+
 # Switch To Project Dir
 
 cd /skeleton
