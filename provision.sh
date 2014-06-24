@@ -70,6 +70,10 @@ ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite
 
 service apache2 restart
 
+# Switch To Project Dir
+
+cd /skeleton
+
 # Fetch Git Submodules
 
 git submodule init
@@ -78,8 +82,6 @@ git submodule update
 # Remove Git
 
 find . -type d | grep -i "\.git$" | xargs rm -rf
-
-cd /skeleton
 
 # Initialize Git Again
 
