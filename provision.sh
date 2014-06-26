@@ -79,18 +79,18 @@ cd /skeleton
 
 # Fetch Git Submodules
 
-git submodule init
-git submodule update
+#git submodule init
+#git submodule update
 
 # Remove Git
 
-find . -type d | grep -i "\.git$" | xargs rm -rf
+#find . -type d | grep -i "\.git$" | xargs rm -rf
 
 # Initialize Git Again
 
-git init
-git add -A
-git commit -am 'Intial Commit'
+#git init
+#git add -A
+#git commit -am 'Intial Commit'
 
 # Run Composer
 
